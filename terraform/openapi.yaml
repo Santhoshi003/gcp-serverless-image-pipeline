@@ -1,0 +1,25 @@
+swagger: "2.0"
+info:
+  title: image-upload-api
+  version: "1.0.0"
+
+schemes:
+  - https
+
+paths:
+  /upload-image:
+    post:
+      operationId: uploadImage
+      x-google-backend:
+        address: https://upload-image-kzjwibjgka-uc.a.run.app
+      responses:
+        "202":
+          description: Accepted
+      security:
+        - api_key: []
+
+securityDefinitions:
+  api_key:
+    type: apiKey
+    name: x-api-key
+    in: header
